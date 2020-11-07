@@ -14,6 +14,8 @@ import utilities.HarryPotterUtils;
 import java.lang.invoke.SwitchPoint;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -77,12 +79,14 @@ public class APIStepDef {
     @Then("Houses should include following items")
     public void houses_should_include_following_items(DataTable dataTable) {
         List<String> expectedHouses = dataTable.asList();
-        System.out.println("expectedHouses = " + expectedHouses);
         List<String> actualHouses = new ArrayList<>();
         for(MyHouses mh : house){
             actualHouses.add(mh.getName());
         }
-        System.out.println("actualHouses = " + actualHouses);
+        long count = actualHouses.stream()
+                .filter(x -> expectedHouses.contains(x)).count();
+
+        Assert.assertEquals(expectedHouses.size(),(int)count);
 
     }
 }

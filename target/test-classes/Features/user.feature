@@ -23,3 +23,4 @@ Feature: Login to the Harry Potter API
     Then Houses should include following items
       | Ravenclaw  |
       | Gryffindor |
+      #| Semih      |

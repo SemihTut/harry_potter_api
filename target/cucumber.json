@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-11-07T15:06:58.591Z",
+        "start_timestamp": "2020-11-07T19:52:40.783Z",
         "before": [
           {
             "result": {
-              "duration": 810315000,
+              "duration": 449844700,
               "status": "passed"
             },
             "match": {
@@ -24,7 +24,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2661342100,
+              "duration": 1760822200,
               "status": "passed"
             },
             "line": 21,
@@ -42,7 +42,7 @@
           },
           {
             "result": {
-              "duration": 28642000,
+              "duration": 18949600,
               "status": "passed"
             },
             "line": 22,
@@ -60,9 +60,8 @@
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError: expected [true] but found [false]\r\n\tat org.testng.Assert.fail(Assert.java:97)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:969)\r\n\tat org.testng.Assert.assertTrue(Assert.java:43)\r\n\tat org.testng.Assert.assertTrue(Assert.java:53)\r\n\tat StepDefinitions.APIStepDef.houses_should_include_following_items(APIStepDef.java:86)\r\n\tat ✽.Houses should include following items(file:///C:/Users/yalaa/HarryPotterApi/src/test/resources/Features/user.feature:23)\r\n",
-              "duration": 6041300,
-              "status": "failed"
+              "duration": 3989000,
+              "status": "passed"
             },
             "line": 23,
             "name": "Houses should include following items",
