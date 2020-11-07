@@ -19,6 +19,31 @@ public class MyCharacters{
 	private String patronus;
 	private String animagus;
 
+
+	@Override
+	public String toString() {
+		return "MyCharacters{" +
+				"role='" + role + '\'' +
+				", bloodStatus='" + bloodStatus + '\'' +
+				", school='" + school + '\'' +
+				", species='" + species + '\'' +
+				", deathEater=" + deathEater +
+				", __v=" + __v +
+				", dumbledoresArmy=" + dumbledoresArmy +
+				", name='" + name + '\'' +
+				", ministryOfMagic=" + ministryOfMagic +
+				", _id='" + _id + '\'' +
+				", orderOfThePhoenix=" + orderOfThePhoenix +
+				", house='" + house + '\'' +
+				", alias='" + alias + '\'' +
+				", wand='" + wand + '\'' +
+				", boggart='" + boggart + '\'' +
+				", patronus='" + patronus + '\'' +
+				", animagus='" + animagus + '\'' +
+				'}';
+	}
+
+
 	public String getAnimagus() {
 		return animagus;
 	}
@@ -163,25 +188,4 @@ public class MyCharacters{
 		return house;
 	}
 
-	@Override
-	public String toString() {
-		return "MyCharacters{" +
-				"role='" + role + '\'' +
-				", bloodStatus='" + bloodStatus + '\'' +
-				", school='" + school + '\'' +
-				", species='" + species + '\'' +
-				", deathEater=" + deathEater +
-				", __v=" + __v +
-				", dumbledoresArmy=" + dumbledoresArmy +
-				", name='" + name + '\'' +
-				", ministryOfMagic=" + ministryOfMagic +
-				", _id='" + _id + '\'' +
-				", orderOfThePhoenix=" + orderOfThePhoenix +
-				", house='" + house + '\'' +
-				", alias='" + alias + '\'' +
-				", wand='" + wand + '\'' +
-				", boggart='" + boggart + '\'' +
-				", patronus='" + patronus + '\'' +
-				'}';
-	}
 }

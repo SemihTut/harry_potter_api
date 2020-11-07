@@ -3,11 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-11-06T21:53:11.949Z",
+        "start_timestamp": "2020-11-07T15:06:58.591Z",
         "before": [
           {
             "result": {
-              "duration": 602539000,
+              "duration": 810315000,
               "status": "passed"
             },
             "match": {
@@ -15,24 +15,24 @@
             }
           }
         ],
-        "line": 9,
-        "name": "User should get the information from API",
+        "line": 20,
+        "name": "User should see the houses informations from the API",
         "description": "",
-        "id": "login-to-the-harry-potter-api;user-should-get-the-information-from-api",
+        "id": "login-to-the-harry-potter-api;user-should-see-the-houses-informations-from-the-api",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 1858612300,
+              "duration": 2661342100,
               "status": "passed"
             },
-            "line": 10,
-            "name": "User get the current information from API for end point \"characters\"",
+            "line": 21,
+            "name": "User get the current information from API for end point \"houses\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"characters\"",
+                  "val": "\"houses\"",
                   "offset": 56
                 }
               ],
@@ -42,10 +42,10 @@
           },
           {
             "result": {
-              "duration": 31127200,
+              "duration": 28642000,
               "status": "passed"
             },
-            "line": 11,
+            "line": 22,
             "name": "status code should be 200",
             "match": {
               "arguments": [
@@ -60,44 +60,24 @@
           },
           {
             "result": {
-              "duration": 997700,
-              "status": "passed"
+              "error_message": "java.lang.AssertionError: expected [true] but found [false]\r\n\tat org.testng.Assert.fail(Assert.java:97)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:969)\r\n\tat org.testng.Assert.assertTrue(Assert.java:43)\r\n\tat org.testng.Assert.assertTrue(Assert.java:53)\r\n\tat StepDefinitions.APIStepDef.houses_should_include_following_items(APIStepDef.java:86)\r\n\tat ✽.Houses should include following items(file:///C:/Users/yalaa/HarryPotterApi/src/test/resources/Features/user.feature:23)\r\n",
+              "duration": 6041300,
+              "status": "failed"
             },
-            "line": 12,
-            "name": "User should get the \"house\" of below names",
+            "line": 23,
+            "name": "Houses should include following items",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"house\"",
-                  "offset": 20
-                }
-              ],
-              "location": "StepDefinitions.APIStepDef.userShouldGetTheOfBelowNames(java.lang.String,java.util.List\u003cjava.lang.String\u003e)"
+              "location": "StepDefinitions.APIStepDef.houses_should_include_following_items(io.cucumber.datatable.DataTable)"
             },
             "rows": [
               {
                 "cells": [
-                  "Ronald Weasley"
+                  "Ravenclaw"
                 ]
               },
               {
                 "cells": [
-                  "Percy Weasley"
-                ]
-              },
-              {
-                "cells": [
-                  "Fred Weasley"
-                ]
-              },
-              {
-                "cells": [
-                  "Harry Potter"
-                ]
-              },
-              {
-                "cells": [
-                  "Gregory Goyle"
+                  "Gryffindor"
                 ]
               }
             ],
@@ -106,7 +86,7 @@
         ],
         "tags": [
           {
-            "name": "@smoke"
+            "name": "@wip"
           }
         ]
       }

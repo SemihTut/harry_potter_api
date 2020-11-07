@@ -1,10 +1,13 @@
 package StepDefinitions;
 
 import POJOs.MyCharacters;
+import POJOs.MyHouses;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.testng.Assert;
 import utilities.ConfigurationReader;
 import utilities.HarryPotterUtils;
 
@@ -19,6 +22,7 @@ public class APIStepDef {
     Response response;
     RequestSpecification requestSpecification = HarryPotterUtils.requestIsReady();
     MyCharacters[] as;
+    MyHouses[]house ;
 
     @When("User get the current information from API for end point {string}")
     public void user_get_the_current_information_from_API_for_end_point(String endPoint) {
@@ -26,9 +30,10 @@ public class APIStepDef {
                 .spec(requestSpecification)
                 .when()
                 .get(endPoint);
-        //response.then().log().all();
-        as = response.body().as(MyCharacters[].class);
-        System.out.println("as.getId() = " + as[0].get_id());
+        response.then().log().all();
+        //as = response.body().as(MyCharacters[].class);
+        house = response.body().as(MyHouses[].class);
+
     }
 
     @Then("status code should be {int}")
@@ -65,7 +70,19 @@ public class APIStepDef {
                 }
             }
         }
-        System.out.println("id = " + houses);
+        houses.forEach(System.out::println);
+
+    }
+
+    @Then("Houses should include following items")
+    public void houses_should_include_following_items(DataTable dataTable) {
+        List<String> expectedHouses = dataTable.asList();
+        System.out.println("expectedHouses = " + expectedHouses);
+        List<String> actualHouses = new ArrayList<>();
+        for(MyHouses mh : house){
+            actualHouses.add(mh.getName());
+        }
+        System.out.println("actualHouses = " + actualHouses);
 
     }
 }
